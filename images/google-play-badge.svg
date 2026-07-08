@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="180" height="53.333" viewBox="0 0 180 53.333">
+  <defs>
+    <linearGradient id="a" x1="31.8" y1="-23.9" x2="4.4" y2="46.1" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00a0ff"/>
+      <stop offset=".01" stop-color="#00a1ff"/>
+      <stop offset=".26" stop-color="#00beff"/>
+      <stop offset=".51" stop-color="#00d2ff"/>
+      <stop offset=".76" stop-color="#00dfff"/>
+      <stop offset="1" stop-color="#00e3ff"/>
+    </linearGradient>
+    <linearGradient id="b" x1="43.8" y1="9.1" x2="16.3" y2="79.1" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffe000"/>
+      <stop offset=".41" stop-color="#ffbd00"/>
+      <stop offset=".78" stop-color="orange"/>
+      <stop offset="1" stop-color="#ff9c00"/>
+    </linearGradient>
+    <linearGradient id="c" x1="4.6" y1="-14.6" x2="-22.9" y2="55.4" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff3a44"/>
+      <stop offset="1" stop-color="#c31162"/>
+    </linearGradient>
+    <linearGradient id="d" x1="42.8" y1=".1" x2="15.3" y2="70.1" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#32a071"/>
+      <stop offset=".07" stop-color="#2da771"/>
+      <stop offset=".48" stop-color="#15cf74"/>
+      <stop offset=".8" stop-color="#06e775"/>
+      <stop offset="1" stop-color="#00f076"/>
+    </linearGradient>
+  </defs>
+  <rect width="180" height="53.333" rx="5" fill="#000"/>
+  <path d="M8.7 26.7c0-.3 0-.6.2-.8l14.5-8.4-3.4 5.9z" fill="url(#a)"/>
+  <path d="M8.9 27.5c-.2-.2-.2-.5 0-.7l14.3 8.3-3.4-5.9z" fill="url(#d)"/>
+  <path d="M23.4 17.5l3.4 5.9 11.6-6.7-15-8.7z" fill="url(#b)"/>
+  <path d="M23.4 35.9l15-8.7-11.6-6.7-3.4 5.9z" fill="url(#c)"/>
+  <path d="M38.4 26.7l-15 8.7 11.6 6.7 3.5-15.4z" fill="url(#d)" opacity=".8"/>
+  <text x="52" y="16" fill="#fff" font-family="Roboto,Arial,sans-serif" font-size="6.5" letter-spacing=".08em">GET IT ON</text>
+  <text x="52" y="34" fill="#fff" font-family="Roboto,Arial,sans-serif" font-size="14.5" font-weight="500" letter-spacing="-.02em">Google Play</text>
+</svg>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mystery Case</title>
+  <meta name="description" content="Mystery Case — 西部悬疑冒险解谜游戏。立即下载，开启魔典之谜。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="page">
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+
+    <main class="layout">
+      <header class="header">
+        <div class="avatar">
+          <img src="images/app-icon.jpg" alt="Mystery Case">
+        </div>
+        <h1 class="title">Mystery Case</h1>
+      </header>
+
+      <section class="gallery" aria-label="游戏画面">
+        <div class="carousel">
+          <div class="carousel-track">
+            <div class="carousel-slide active">
+              <img src="images/魔典散开.jpeg" alt="魔典散开">
+            </div>
+            <div class="carousel-slide">
+              <img src="images/西部追逐.jpeg" alt="西部追逐">
+            </div>
+            <div class="carousel-slide">
+              <img src="images/丧失追逐.jpeg" alt="丧失追逐">
+            </div>
+            <div class="carousel-slide">
+              <img src="images/大赛追逐.jpeg" alt="大赛追逐">
+            </div>
+            <div class="carousel-slide">
+              <img src="images/残响追逐.jpeg" alt="残响追逐">
+            </div>
+            <div class="carousel-slide">
+              <img src="images/魂山追逐.jpeg" alt="魂山追逐">
+            </div>
+            <div class="carousel-slide">
+              <img src="images/书内容的大特写.jpeg" alt="Mystery Case 魔典">
+            </div>
+          </div>
+          <button class="carousel-btn prev" aria-label="上一张">&#8249;</button>
+          <button class="carousel-btn next" aria-label="下一张">&#8250;</button>
+          <div class="carousel-dots"></div>
+        </div>
+      </section>
+
+      <section class="links">
+        <a
+          class="link-btn"
+          href="https://play.google.com/store/apps/details?id=com.joystream.mysterycase"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img class="link-btn-icon" src="images/google-play-icon.svg" alt="">
+          <span>Google Play</span>
+        </a>
+
+        <a
+          class="link-btn"
+          href="https://apps.apple.com/us/app/mystery-case/id6755813545"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg class="link-btn-icon apple-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+          </svg>
+          <span>App Store</span>
+        </a>
+      </section>
+
+      <footer class="footer">
+        <p>&copy; Joystream Technology Limited</p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="js/carousel.js"></script>
+</body>
+</html>

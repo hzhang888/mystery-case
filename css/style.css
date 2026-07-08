@@ -1,0 +1,353 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-deep: #0a0612;
+  --bg-card: rgba(20, 10, 35, 0.85);
+  --purple-glow: #9b59d4;
+  --purple-light: #c084fc;
+  --purple-dark: #6b21a8;
+  --gold: #d4a853;
+  --text-primary: #f0e6ff;
+  --text-muted: rgba(240, 230, 255, 0.6);
+  --border: rgba(155, 89, 212, 0.25);
+  --btn-bg: rgba(30, 15, 50, 0.9);
+  --btn-hover: rgba(50, 25, 80, 0.95);
+  --radius: 16px;
+  --content-width: 480px;
+  --gallery-width: min(96vw, 1200px);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Noto Sans SC', sans-serif;
+  background: var(--bg-deep);
+  color: var(--text-primary);
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.glow {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glow-1 {
+  width: 400px;
+  height: 400px;
+  background: rgba(107, 33, 168, 0.35);
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.glow-2 {
+  width: 300px;
+  height: 300px;
+  background: rgba(155, 89, 212, 0.2);
+  bottom: 10%;
+  right: -80px;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 48px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+.layout {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  padding: 48px 20px 40px;
+}
+
+.header,
+.links,
+.footer {
+  width: 100%;
+  max-width: var(--content-width);
+}
+
+/* Header */
+.header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--border);
+  box-shadow: 0 0 24px rgba(155, 89, 212, 0.4);
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--purple-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gallery / Carousel */
+.gallery {
+  width: 100%;
+  max-width: var(--gallery-width);
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5),
+              0 0 40px rgba(107, 33, 168, 0.15);
+  background: var(--bg-card);
+}
+
+.carousel-track {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.carousel-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  background: #000;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(10, 6, 18, 0.7);
+  color: var(--text-primary);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--border);
+  z-index: 2;
+}
+
+.carousel-btn:hover {
+  background: rgba(107, 33, 168, 0.6);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.carousel-btn.prev { left: 10px; }
+.carousel-btn.next { right: 10px; }
+
+.carousel-dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 2;
+}
+
+.carousel-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.carousel-dot.active {
+  background: var(--purple-light);
+  transform: scale(1.2);
+}
+
+/* Link Buttons */
+.links {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.link-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 16px 24px;
+  background: #fff;
+  color: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 9999px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.link-btn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+}
+
+.link-btn:active {
+  transform: scale(0.99);
+}
+
+.link-btn-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.link-btn-icon.apple-icon {
+  color: #1a1a1a;
+}
+
+/* Footer */
+.footer {
+  margin-top: 8px;
+  text-align: center;
+}
+
+.footer p {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+@media (min-width: 768px) {
+  .layout {
+    gap: 32px;
+    padding: 40px 32px 48px;
+  }
+
+  .gallery {
+    --gallery-width: min(94vw, 1280px);
+  }
+
+  .carousel {
+    border-radius: 20px;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.55),
+                0 0 60px rgba(107, 33, 168, 0.2);
+  }
+
+  .carousel-track {
+    aspect-ratio: auto;
+    height: clamp(420px, 62vh, 760px);
+  }
+
+  .carousel-btn {
+    width: 48px;
+    height: 48px;
+    font-size: 1.8rem;
+  }
+
+  .carousel-btn.prev { left: 16px; }
+  .carousel-btn.next { right: 16px; }
+
+  .carousel-dots {
+    bottom: 18px;
+    gap: 8px;
+  }
+
+  .carousel-dot {
+    width: 9px;
+    height: 9px;
+  }
+}
+
+@media (min-width: 480px) {
+  .layout {
+    padding-top: 64px;
+  }
+
+  .avatar {
+    width: 112px;
+    height: 112px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .carousel-track {
+    height: clamp(480px, 68vh, 820px);
+  }
+}
